@@ -58,6 +58,7 @@ Warbler::Config.new do |config|
   # file.
   # The Rails gems are included by default unless the vendor/rails
   # directory is present.
+  config.gems += ["jruby-openssl", "test_sinatra_app", "sinatra"]
   # config.gems += ["activerecord-jdbcmysql-adapter", "jruby-openssl"]
   # config.gems << "tzinfo"
 
