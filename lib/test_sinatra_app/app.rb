@@ -17,6 +17,10 @@ module TestSinatraApp
       set :sky_color, ENV['SKY_COLOR'] || :blue
     end
 
+    before do
+      content_type "text/plain"
+    end
+
     get "/" do
       "#{settings.sky_color}"
     end
@@ -34,7 +38,15 @@ module TestSinatraApp
 
     get "/pemtest/?" do
       cert = OpenSSL::X509::Certificate.new(TestSinatraApp::PEMFILE)
-      "#{cert.to_text}"
+      out=<<-EOL
+      Issuer:     #{cert.issuer.to_s}
+      Version:    #{cert.version.to_s}
+      Not Before: #{cert.not_before.to_s}
+      Not After:  #{cert.not_after.to_s}
+      Subject:    #{cert.subject.to_s}
+      Algorithm:  #{cert.signature_algorithm}
+      EOL
+      "#{out}"
     end
   end
 end
