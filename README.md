@@ -11,6 +11,7 @@ The goal is to have it work in the following configurations:
 * rackable application via config.ru
 * Warble-packaged deployable warfile (both jetty and tomcat)
 * Warble standalone winstone warfile
+* SSL works with JRuby
 
 Additionally, it needs to be flexible in accepting a single configuration option: `sky_color`.
 
