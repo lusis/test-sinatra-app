@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["lusis.org+github.com@gmail.com"]
   s.homepage    = "https://github.com/lusis/test_sinatra_app"
   s.summary     = %q{Test Sinatra App}
-  s.description = %q{Testing Jruby/MRI bundler/warbler/gemspec packaging}
+  s.description = %q{A Sinatra test application for validating various combinations of packaging and vm platforms}
 
   s.rubyforge_project = "test_sinatra_app"
 
