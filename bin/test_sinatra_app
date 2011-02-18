@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
-$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+$:.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
+require 'rubygems'
 require 'test_sinatra_app'
 require 'vegas'
 
 Vegas::Runner.new(TestSinatraApp::Service, 'test_sinatra_app') do |runner, opts, app|
-  opts.on("-x", "--sky-color", "value for sky color") {|sky| TestSinatraApp::Service.set :sky_color, sky}
+  opts.on("-m", "--sky-color color", "value for sky color") {|sky| app.set :sky_color, sky.to_sym}
 end
